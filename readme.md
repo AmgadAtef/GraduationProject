@@ -31,8 +31,8 @@ namespace RTEvents
 
         private MySqlConnection connection;
         private string server = "localhost";
-        private string database = "baes";
-        private string uid = "root";
+        private string database = "baes2013";
+        private string uid = "amgad";
         private string password = "";
         
         string connectionString;
@@ -81,7 +81,7 @@ namespace RTEvents
       
         public void Select()
         {
-            string query = "SELECT * FROM candidates";
+            string query = "SELECT * FROM candidate";
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -130,7 +130,7 @@ namespace RTEvents
 
         public void Insert(String canid)
         {
-            string query = "INSERT INTO `votes`(`canid`, `voterid`, `votername`, `voterssn`) VALUES ('"+canid+"','"+RTEvents.RTEventsMain.userid_af+"','"+RTEventsMain.voter_name+"','"+RTEventsMain.voter_ssn+"')";
+            string query = "INSERT INTO `votes`(`candid`, `voterid`, `voternamefl`, `voterssn`) VALUES ('"+canid+"','"+RTEvents.RTEventsMain.userid_af+"','"+RTEventsMain.voter_name+"','"+RTEventsMain.voter_ssn+"')";
             
             //open connection
             if (this.OpenConnection() == true)
